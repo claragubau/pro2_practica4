@@ -1,6 +1,6 @@
-package prog2.model;
+package ub.info.prog2.FrancoOriolGubauClara.model;
 
-import prog2.vista.MercatException;
+import ub.info.prog2.FrancoOriolGubauClara.vista.MercatException;
 import java.io.Serializable;
 import java.util.Iterator;
 

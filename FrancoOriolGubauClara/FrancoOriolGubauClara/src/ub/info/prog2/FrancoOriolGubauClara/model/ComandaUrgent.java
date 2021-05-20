@@ -1,4 +1,4 @@
-package prog2.model;
+package ub.info.prog2.FrancoOriolGubauClara.model;
 
 import java.util.Date;
 

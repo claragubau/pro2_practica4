@@ -3,7 +3,7 @@
  * Programació 2
  * Curs 2015-2016
  */
-package prog2.vista;
+package ub.info.prog2.FrancoOriolGubauClara.vista;
 
 import java.util.Scanner;
 

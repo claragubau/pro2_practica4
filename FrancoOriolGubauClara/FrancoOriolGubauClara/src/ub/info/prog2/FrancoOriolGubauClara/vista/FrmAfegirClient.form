@@ -23,13 +23,193 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="panAfegirClient" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="btnAfegir" min="-2" pref="104" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="btnCancellar" min="-2" pref="104" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="300" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="panAfegirClient" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnCancellar" alignment="3" max="32767" attributes="0"/>
+                  <Component id="btnAfegir" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="panAfegirClient">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Afegir Client">
+              <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+              <Font PropertyName="font" name="Tahoma" size="12" style="1"/>
+            </TitledBorder>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="lblClientPremium" max="32767" attributes="0"/>
+                          <Component id="lblCorreuElectronic" max="32767" attributes="0"/>
+                          <Component id="lblAdrecaPostal" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <Component id="lblNomClient" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="txtNomClient" min="-2" pref="137" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="lblNomCognomsClient" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="txtCognomsClient" min="-2" pref="326" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="txtAdrecaPostal" max="32767" attributes="0"/>
+                              <Component id="cbxTipusClient" min="-2" pref="89" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="lblCodiPostal" min="-2" pref="57" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="txtCodiPostal" min="-2" pref="95" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="txtCorreuElectronic" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="txtNomClient" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblNomClient" alignment="3" pref="22" max="32767" attributes="0"/>
+                          <Component id="txtCognomsClient" alignment="3" min="-2" pref="21" max="-2" attributes="0"/>
+                          <Component id="lblNomCognomsClient" alignment="3" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="txtCodiPostal" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblAdrecaPostal" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                      <Component id="txtAdrecaPostal" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblCodiPostal" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="txtCorreuElectronic" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblCorreuElectronic" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="16" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblClientPremium" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                      <Component id="cbxTipusClient" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="lblNomClient">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Nom:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblCorreuElectronic">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Correu electr&#xf2;nic:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblClientPremium">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Tipus Client:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblNomCognomsClient">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cognoms:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblAdrecaPostal">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Adre&#xe7;a:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cbxTipusClient">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="2">
+                <StringItem index="0" value="Est&#xe0;ndard"/>
+                <StringItem index="1" value="Premium"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtAdrecaPostal">
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtCodiPostal">
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtNomClient">
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtCognomsClient">
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblCodiPostal">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Codi Postal:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtCorreuElectronic">
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JButton" name="btnAfegir">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Afegir"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAfegirActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnCancellar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cancel&#xb7;lar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancellarActionPerformed"/>
+      </Events>
+    </Component>
+  </SubComponents>
 </Form>

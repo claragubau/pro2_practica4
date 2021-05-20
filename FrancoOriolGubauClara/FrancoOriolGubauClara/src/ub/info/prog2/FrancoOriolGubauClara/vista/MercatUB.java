@@ -1,6 +1,6 @@
-package prog2.vista;
+package ub.info.prog2.FrancoOriolGubauClara.vista;
 
-import prog2.controlador.Controlador;
+import ub.info.prog2.FrancoOriolGubauClara.controlador.Controlador;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -104,7 +104,7 @@ public class MercatUB {
                         opcioArticles = menuArticles.getOpcio(sc);
                         switch (opcioArticles) {
                             case M_Opcio_1_Afegir_Article:
-                                afegirArticle(sc);
+                                //afegirArticle(sc);
                                 break;
                             case M_Opcio_2_Visualitzar_Article:
                                 visualitzarArticle();
@@ -164,30 +164,8 @@ public class MercatUB {
         }while(opcioMenu != OpcionsMenu.M_Opcio_6_Sortir);
     }
     
-    /**
-     * Mètode afegirArticle() de suport per demanar la informació i afegir un article (Opció 1.1 del menú).
-     * @param sc 
-     */
-    private void afegirArticle(Scanner sc){
-        System.out.print("Identificador de l'article: ");
-        String idArticle = sc.nextLine();
-        System.out.print("Nom de l'article: ");
-        String nomArticle = sc.nextLine();
-        System.out.print("Preu article: ");
-        float preuArticle = sc.nextFloat();
-        System.out.print("Temps d'enviament de l'article (en minuts): ");
-        int tempsArticle = sc.nextInt();
-        System.out.print("Admet enviaments urgents? (Si/No) ");
-        String aux = sc.next();
-        try{
-            boolean enviamentUrgentArticle;
-            enviamentUrgentArticle = esAfirmatiu(aux);
-            controlador.afegirArticle(idArticle, nomArticle, preuArticle,
-                        tempsArticle, enviamentUrgentArticle);
-        } catch (MercatException e) {
-                System.out.print(e.getMessage());
-        }
-    }
+   
+    
     
     /**
      * Mètode visualitzarArticle() de suport per visualitzar el llistat d'articles (Opció 1.2 del menú).
@@ -206,7 +184,7 @@ public class MercatUB {
      * Mètode afegirClient() de suport per demanar la informació i afegir un client (Opció 2.1 del menú).
      * @param sc 
      */
-    private void afegirClient(Scanner sc){
+    private void afegirClient(Scanner sc) {
         System.out.print("Nom del client: ");
         String nomClient = sc.nextLine();
         System.out.print("Correu electrònic del client: ");

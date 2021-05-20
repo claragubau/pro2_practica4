@@ -1,4 +1,4 @@
-package prog2.vista;
+package ub.info.prog2.FrancoOriolGubauClara.vista;
 
 /**
  * Classe MercatException

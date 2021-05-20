@@ -1,7 +1,7 @@
-package prog2.controlador;
+package ub.info.prog2.FrancoOriolGubauClara.controlador;
 
-import prog2.model.*;
-import prog2.vista.MercatException;
+import ub.info.prog2.FrancoOriolGubauClara.model.*;
+import ub.info.prog2.FrancoOriolGubauClara.vista.MercatException;
 
 import java.io.File;
 import java.io.FileOutputStream;

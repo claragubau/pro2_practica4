@@ -5,18 +5,21 @@
  */
 package ub.info.prog2.FrancoOriolGubauClara.vista;
 
+
+import ub.info.prog2.FrancoOriolGubauClara.controlador.Controlador;
 /**
  *
  * @author clara
  */
 public class FrmAfegirArticle extends javax.swing.JDialog {
-
+    Controlador controlador;
     /**
      * Creates new form FrmAfegirArticle
      */
     public FrmAfegirArticle(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        chkEnviamentUrgent.setSelected(false);
     }
 
     /**
@@ -28,21 +31,154 @@ public class FrmAfegirArticle extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        panAfegirArticle = new javax.swing.JPanel();
+        lblNomArticle = new javax.swing.JLabel();
+        lblIdArticle = new javax.swing.JLabel();
+        lblPreuArticle = new javax.swing.JLabel();
+        lblTempsEnviament = new javax.swing.JLabel();
+        lblEnviamentUrgent = new javax.swing.JLabel();
+        lblMinuts = new javax.swing.JLabel();
+        spnTempsEnviament = new javax.swing.JSpinner();
+        txtNomArticle = new javax.swing.JTextField();
+        txtPreu = new javax.swing.JTextField();
+        txtIdArticle = new javax.swing.JTextField();
+        chkEnviamentUrgent = new javax.swing.JCheckBox();
+        btnCancellar = new javax.swing.JButton();
+        btnAfegir = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        panAfegirArticle.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Afegir Article", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
+
+        lblNomArticle.setText("Nom de l'Article:");
+
+        lblIdArticle.setText("Id de l'Article:");
+
+        lblPreuArticle.setText("Preu:");
+
+        lblTempsEnviament.setText("Temps Enviament:");
+
+        lblEnviamentUrgent.setText("Admet Enviaments Urgents: ");
+
+        lblMinuts.setText("(min)");
+
+        javax.swing.GroupLayout panAfegirArticleLayout = new javax.swing.GroupLayout(panAfegirArticle);
+        panAfegirArticle.setLayout(panAfegirArticleLayout);
+        panAfegirArticleLayout.setHorizontalGroup(
+            panAfegirArticleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panAfegirArticleLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panAfegirArticleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panAfegirArticleLayout.createSequentialGroup()
+                        .addComponent(lblEnviamentUrgent)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(chkEnviamentUrgent)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(panAfegirArticleLayout.createSequentialGroup()
+                        .addGroup(panAfegirArticleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(lblTempsEnviament, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblIdArticle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblNomArticle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblPreuArticle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(panAfegirArticleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panAfegirArticleLayout.createSequentialGroup()
+                                .addComponent(spnTempsEnviament, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(lblMinuts))
+                            .addComponent(txtNomArticle)
+                            .addComponent(txtPreu)
+                            .addComponent(txtIdArticle))))
+                .addGap(19, 19, 19))
+        );
+        panAfegirArticleLayout.setVerticalGroup(
+            panAfegirArticleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panAfegirArticleLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panAfegirArticleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNomArticle, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNomArticle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panAfegirArticleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblIdArticle, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtIdArticle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panAfegirArticleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPreuArticle, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPreu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panAfegirArticleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblTempsEnviament, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spnTempsEnviament, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblMinuts, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addGroup(panAfegirArticleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblEnviamentUrgent, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(chkEnviamentUrgent))
+                .addContainerGap())
+        );
+
+        btnCancellar.setText("Cancel·lar");
+        btnCancellar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancellarActionPerformed(evt);
+            }
+        });
+
+        btnAfegir.setText("Afegir");
+        btnAfegir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAfegirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 154, Short.MAX_VALUE)
+                        .addComponent(btnAfegir, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnCancellar, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(panAfegirArticle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panAfegirArticle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCancellar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnAfegir))
+                .addGap(20, 20, 20))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCancellarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancellarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCancellarActionPerformed
+
+    private void btnAfegirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAfegirActionPerformed
+        String nomArticle = txtNomArticle.getText();
+        String idArticle = txtIdArticle.getText();
+        float preuArticle = Float.valueOf(txtPreu.getText());
+        int tempsArticle = spnTempsEnviament.getComponentCount();
+        boolean enviamentUrgentArticle = chkEnviamentUrgent.isSelected();
+        try{
+            controlador.afegirArticle(idArticle, nomArticle, preuArticle,
+                        tempsArticle, enviamentUrgentArticle);
+        }catch(MercatException e){
+            
+        }
+    }//GEN-LAST:event_btnAfegirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -87,5 +223,19 @@ public class FrmAfegirArticle extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAfegir;
+    private javax.swing.JButton btnCancellar;
+    private javax.swing.JCheckBox chkEnviamentUrgent;
+    private javax.swing.JLabel lblEnviamentUrgent;
+    private javax.swing.JLabel lblIdArticle;
+    private javax.swing.JLabel lblMinuts;
+    private javax.swing.JLabel lblNomArticle;
+    private javax.swing.JLabel lblPreuArticle;
+    private javax.swing.JLabel lblTempsEnviament;
+    private javax.swing.JPanel panAfegirArticle;
+    private javax.swing.JSpinner spnTempsEnviament;
+    private javax.swing.JTextField txtIdArticle;
+    private javax.swing.JTextField txtNomArticle;
+    private javax.swing.JTextField txtPreu;
     // End of variables declaration//GEN-END:variables
 }

@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package prog2.model;
+package ub.info.prog2.FrancoOriolGubauClara.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Iterator;
 
-import prog2.vista.MercatException;
+import ub.info.prog2.FrancoOriolGubauClara.vista.MercatException;
 
 /**
  * Classe Llista
