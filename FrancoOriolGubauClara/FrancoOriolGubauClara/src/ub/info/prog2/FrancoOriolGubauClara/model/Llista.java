@@ -9,7 +9,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Iterator;
-
 import ub.info.prog2.FrancoOriolGubauClara.vista.MercatException;
 
 /**

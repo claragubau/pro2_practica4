@@ -38,9 +38,8 @@ public class Controlador {
     /**
      * Mètode per visualitzar la llista d'articles
      * @return string
-     * @throws MercatException La que llença dades.recuperaArticles()
      */
-    public List<String> visualitzarArticles() throws MercatException{
+    public List<String> visualitzarArticles(){
         return dades.recuperaArticles();
     }
 
@@ -59,9 +58,8 @@ public class Controlador {
     /**
      * Mètode per visualitzar la llista de clients
      * @return string
-     * @throws MercatException La que llença dades.recuperaClients()
      */
-    public List<String> visualitzarClients() throws MercatException{
+    public List<String> visualitzarClients() {
         return dades.recuperaClients();
     }
 
@@ -85,18 +83,16 @@ public class Controlador {
     /**
      * Mètode per visualitzar les comandes
      * @return list<string>
-     * @throws MercatException La que llença dades.recuperaComandes()
      */
-    public List<String> visualitzarComandes() throws MercatException{
+    public List<String> visualitzarComandes(){
         return dades.recuperaComandes();
     }
 
     /**
      * Mètode per visualitzar les comandes urgents
      * @return list<string>
-     * @throws MercatException la que llença dades.recuperaComandesUrgents()
      */
-    public List<String> visualitzarComandesUrgents() throws MercatException{
+    public List<String> visualitzarComandesUrgents(){
         return dades.recuperaComandesUrgents();
     }
 

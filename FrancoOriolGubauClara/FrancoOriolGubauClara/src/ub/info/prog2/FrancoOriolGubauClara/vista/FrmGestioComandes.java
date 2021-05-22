@@ -5,17 +5,63 @@
  */
 package ub.info.prog2.FrancoOriolGubauClara.vista;
 
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
+import ub.info.prog2.FrancoOriolGubauClara.controlador.Controlador;
+
 /**
  *
- * @author clara
+ * @author Oriol Franco i Clara Gubau
  */
 public class FrmGestioComandes extends javax.swing.JFrame {
-
+    Controlador controlador;
     /**
      * Creates new form FrmGestioComandes
      */
-    public FrmGestioComandes() {
+    public FrmGestioComandes(Controlador controlador) {
         initComponents();
+        panAfegirComanda.setVisible(false);
+        this.controlador = controlador;
+        chkAfegirComandaUrgent.setSelected(false);
+        btnEliminarComanda.setEnabled(false);
+        omplirLlistaComandes();
+    }
+    
+    public void omplirLlistaArticles(){
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+        model.removeAllElements();
+        for(String str : controlador.visualitzarArticles()){
+            model.addElement(str);
+        }
+        cbxLlistaArticles.setModel(model); 
+    }
+    
+    public void omplirLlistaClients(){
+        DefaultListModel model = new DefaultListModel();
+        model.clear();
+        for(String str : controlador.visualitzarClients()){
+            model.addElement(str);
+        }
+        lstLlistaClients.setModel(model); 
+    }
+    
+    public void omplirLlistaComandes(){
+        DefaultListModel model = new DefaultListModel();
+        model.clear();
+        for(String str : controlador.visualitzarComandes()){
+            model.addElement(str);
+        }
+        lstLlistaComandes.setModel(model); 
+    }
+    
+    public void omplirLlistaComandesUrgents(){
+        DefaultListModel model = new DefaultListModel();
+        model.clear();
+        for(String str : controlador.visualitzarComandesUrgents()){
+            model.addElement(str);
+        }
+        lstLlistaComandes.setModel(model); 
     }
 
     /**
@@ -27,57 +73,321 @@ public class FrmGestioComandes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        panAfegirComanda = new javax.swing.JPanel();
+        etArticle = new javax.swing.JLabel();
+        cbxLlistaArticles = new javax.swing.JComboBox<>();
+        etClient = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        lstLlistaClients = new javax.swing.JList<>();
+        etUnitats = new javax.swing.JLabel();
+        chkAfegirComandaUrgent = new javax.swing.JCheckBox();
+        etComandaUrgent = new javax.swing.JLabel();
+        spnUnitats = new javax.swing.JSpinner();
+        btnConfirmar = new javax.swing.JButton();
+        btnCancellar = new javax.swing.JButton();
+        panVisualitzarComandes = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        lstLlistaComandes = new javax.swing.JList<>();
+        chkComandesUrgents = new javax.swing.JCheckBox();
+        btnAfegirComanda = new javax.swing.JButton();
+        btnEliminarComanda = new javax.swing.JButton();
+        btnSortir = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        panAfegirComanda.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Afegir Comanda", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
+
+        etArticle.setText("Article:");
+
+        cbxLlistaArticles.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbxLlistaArticlesItemStateChanged(evt);
+            }
+        });
+
+        etClient.setText("Client:");
+
+        lstLlistaClients.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        lstLlistaClients.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lstLlistaClients.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lstLlistaClientsMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(lstLlistaClients);
+
+        etUnitats.setText("Unitats:");
+
+        etComandaUrgent.setText("Comanda Urgent:");
+
+        btnConfirmar.setText("Confirmar");
+        btnConfirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfirmarActionPerformed(evt);
+            }
+        });
+
+        btnCancellar.setText("Cancel·lar");
+        btnCancellar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancellarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panAfegirComandaLayout = new javax.swing.GroupLayout(panAfegirComanda);
+        panAfegirComanda.setLayout(panAfegirComandaLayout);
+        panAfegirComandaLayout.setHorizontalGroup(
+            panAfegirComandaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panAfegirComandaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panAfegirComandaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panAfegirComandaLayout.createSequentialGroup()
+                        .addGroup(panAfegirComandaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(etClient, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(etArticle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(panAfegirComandaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1)
+                            .addGroup(panAfegirComandaLayout.createSequentialGroup()
+                                .addComponent(cbxLlistaArticles, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(etUnitats, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(spnUnitats, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12))))
+                    .addGroup(panAfegirComandaLayout.createSequentialGroup()
+                        .addComponent(etComandaUrgent, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(chkAfegirComandaUrgent, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnCancellar, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        panAfegirComandaLayout.setVerticalGroup(
+            panAfegirComandaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panAfegirComandaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panAfegirComandaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(etArticle, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbxLlistaArticles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(etUnitats, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spnUnitats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(56, 56, 56)
+                .addGroup(panAfegirComandaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(etClient, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(panAfegirComandaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panAfegirComandaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnCancellar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(etComandaUrgent, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(chkAfegirComandaUrgent))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        panVisualitzarComandes.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Visualitzar Comandes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
+
+        lstLlistaComandes.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        lstLlistaComandes.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                lstLlistaComandesValueChanged(evt);
+            }
+        });
+        jScrollPane2.setViewportView(lstLlistaComandes);
+
+        chkComandesUrgents.setText("Comandes Urgents");
+        chkComandesUrgents.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkComandesUrgentsActionPerformed(evt);
+            }
+        });
+
+        btnAfegirComanda.setText("Afegir Comanda");
+        btnAfegirComanda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAfegirComandaActionPerformed(evt);
+            }
+        });
+
+        btnEliminarComanda.setText("Eliminar Comanda");
+        btnEliminarComanda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarComandaActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panVisualitzarComandesLayout = new javax.swing.GroupLayout(panVisualitzarComandes);
+        panVisualitzarComandes.setLayout(panVisualitzarComandesLayout);
+        panVisualitzarComandesLayout.setHorizontalGroup(
+            panVisualitzarComandesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panVisualitzarComandesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 875, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panVisualitzarComandesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(chkComandesUrgents, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnAfegirComanda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEliminarComanda, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        panVisualitzarComandesLayout.setVerticalGroup(
+            panVisualitzarComandesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panVisualitzarComandesLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(panVisualitzarComandesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panVisualitzarComandesLayout.createSequentialGroup()
+                        .addComponent(chkComandesUrgents)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnAfegirComanda, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnEliminarComanda, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        btnSortir.setText("Sortir");
+        btnSortir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSortirActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setText("Gestió Comandes");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(panVisualitzarComandes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(panAfegirComanda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnSortir, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(panVisualitzarComandes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panAfegirComanda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSortir, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmGestioComandes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmGestioComandes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmGestioComandes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmGestioComandes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void btnAfegirComandaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAfegirComandaActionPerformed
+        this.setSize(1065, 730);
+        panAfegirComanda.setVisible(true);
+        btnAfegirComanda.setEnabled(false);
+        btnConfirmar.setEnabled(false);
+        chkAfegirComandaUrgent.setSelected(false);
+        spnUnitats.setValue(0);
+        omplirLlistaArticles();
+        omplirLlistaClients();
+        cbxLlistaArticles.setSelectedIndex(-1);
+        lstLlistaClients.setSelectedIndex(-1);
+    }//GEN-LAST:event_btnAfegirComandaActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FrmGestioComandes().setVisible(true);
+    private void btnEliminarComandaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarComandaActionPerformed
+        try{
+            controlador.esborrarComanda(lstLlistaComandes.getSelectedIndex() + 1);
+            visualitzarComandesNormalsOUrgents();
+        }catch(MercatException e){
+            JOptionPane.showMessageDialog(this, e.getMessage(),"", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnEliminarComandaActionPerformed
+
+    private void lstLlistaComandesValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_lstLlistaComandesValueChanged
+        btnEliminarComanda.setEnabled(!lstLlistaComandes.isSelectionEmpty());
+    }//GEN-LAST:event_lstLlistaComandesValueChanged
+
+    private void btnSortirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSortirActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnSortirActionPerformed
+
+    private void chkComandesUrgentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkComandesUrgentsActionPerformed
+        visualitzarComandesNormalsOUrgents();
+    }//GEN-LAST:event_chkComandesUrgentsActionPerformed
+
+    private void btnCancellarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancellarActionPerformed
+        this.setSize(1065, 485);
+        panAfegirComanda.setVisible(false);
+        btnAfegirComanda.setEnabled(true);
+    }//GEN-LAST:event_btnCancellarActionPerformed
+
+    private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
+        try{
+            int articlePos = cbxLlistaArticles.getSelectedIndex() + 1;
+            int clientPos = lstLlistaClients.getSelectedIndex() + 1;
+            int quantitat = (Integer) spnUnitats.getValue();
+            boolean enviamentUrgentComanda = chkAfegirComandaUrgent.isSelected();
+            controlador.afegirComanda(articlePos, clientPos, quantitat, enviamentUrgentComanda);
+            visualitzarComandesNormalsOUrgents();
+            this.setSize(1065, 485);
+            panAfegirComanda.setVisible(false);
+            btnAfegirComanda.setEnabled(true);
+        }catch(MercatException e){
+            JOptionPane.showMessageDialog(this, e.getMessage(),"", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnConfirmarActionPerformed
+
+    private void lstLlistaClientsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lstLlistaClientsMouseClicked
+        btnConfirmar.setEnabled(comprovarCampsPlens());
+    }//GEN-LAST:event_lstLlistaClientsMouseClicked
+
+    private void cbxLlistaArticlesItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxLlistaArticlesItemStateChanged
+        btnConfirmar.setEnabled(comprovarCampsPlens());
+    }//GEN-LAST:event_cbxLlistaArticlesItemStateChanged
+
+    private boolean comprovarCampsPlens(){
+        return !lstLlistaClients.isSelectionEmpty() && (cbxLlistaArticles.getSelectedIndex() != -1); 
+    }
+    
+    private void visualitzarComandesNormalsOUrgents(){
+        if(!chkComandesUrgents.isSelected()){
+                omplirLlistaComandes();    
+            }else{
+                omplirLlistaComandesUrgents();
             }
-        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAfegirComanda;
+    private javax.swing.JButton btnCancellar;
+    private javax.swing.JButton btnConfirmar;
+    private javax.swing.JButton btnEliminarComanda;
+    private javax.swing.JButton btnSortir;
+    private javax.swing.JComboBox<String> cbxLlistaArticles;
+    private javax.swing.JCheckBox chkAfegirComandaUrgent;
+    private javax.swing.JCheckBox chkComandesUrgents;
+    private javax.swing.JLabel etArticle;
+    private javax.swing.JLabel etClient;
+    private javax.swing.JLabel etComandaUrgent;
+    private javax.swing.JLabel etUnitats;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JList<String> lstLlistaClients;
+    private javax.swing.JList<String> lstLlistaComandes;
+    private javax.swing.JPanel panAfegirComanda;
+    private javax.swing.JPanel panVisualitzarComandes;
+    private javax.swing.JSpinner spnUnitats;
     // End of variables declaration//GEN-END:variables
 }

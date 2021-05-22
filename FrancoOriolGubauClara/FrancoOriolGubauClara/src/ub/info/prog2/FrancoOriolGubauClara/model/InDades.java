@@ -12,11 +12,11 @@ public interface InDades {
     
     public void afegirArticle(String id, String nom, float preu, int temps, boolean admetUrgent) throws MercatException;
     
-    public List<String> recuperaArticles() throws MercatException;
+    public List<String> recuperaArticles();
 
     public void afegirClient(String email, String nom, String adreca, boolean esPremium) throws MercatException;
 
-    public List<String> recuperaClients() throws MercatException;
+    public List<String> recuperaClients();
 
     public void afegirComanda(int articlePos, int clientPos, int quantitat, boolean esUrgent) throws MercatException; 
     

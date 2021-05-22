@@ -40,22 +40,17 @@ public class Dades implements InDades, Serializable{
     /**
      * Mètode per recuperar articles
      * @return List<String>
-     * @throws prog2.vista.MercatException si la llista és buida
      */
     @Override
-    public List<String> recuperaArticles() throws MercatException{
-        if (llistaArticles.isEmpty()){
-            throw new MercatException("No hi ha cap article registrat.\n");
-        }else{
-            List<String> res = new ArrayList<>();
-            Iterator it = llistaArticles.llista.iterator();
-            int pos = 1;
-            while(it.hasNext()){
-                res.add("\n[" + String.valueOf(pos) + "]" + it.next().toString());
-                pos++;
-            }
-            return res;
+    public List<String> recuperaArticles(){
+        List<String> res = new ArrayList<>();
+        Iterator it = llistaArticles.llista.iterator();
+        int pos = 1;
+        while(it.hasNext()){
+            res.add("\n[" + String.valueOf(pos) + "]" + it.next().toString());
+            pos++;
         }
+        return res;
     }
 
     /**
@@ -80,22 +75,17 @@ public class Dades implements InDades, Serializable{
     /**
      * Mètode per recuperar clients
      * @return List<String>
-     * @throws MercatException Si la llista esta buida
      */
     @Override
-    public List<String> recuperaClients() throws MercatException{
-        if (llistaClients.isEmpty()){
-            throw new MercatException("No hi ha cap client registrat.\n");
-        }else{
-            List<String> res = new ArrayList<>();
-            Iterator it = llistaClients.llista.iterator();
-            int pos = 1;
-            while(it.hasNext()){
-                res.add("\n[" + String.valueOf(pos) + "]" + it.next().toString());
-                pos++;
-            }
-            return res;
+    public List<String> recuperaClients(){
+        List<String> res = new ArrayList<>();
+        Iterator it = llistaClients.llista.iterator();
+        int pos = 1;
+        while(it.hasNext()){
+            res.add("\n[" + String.valueOf(pos) + "]" + it.next().toString());
+            pos++;
         }
+        return res;
     }
 
     /**
@@ -143,51 +133,37 @@ public class Dades implements InDades, Serializable{
     /**
      * Mètode per recuperar una comanda
      * @return List<String>
-     * @throws MercatException Si la llista està buida.
      */
     @Override
-    public List<String> recuperaComandes() throws MercatException{
-        if (llistaComandes.isEmpty()){
-            throw new MercatException("No hi ha cap comanda registrada.\n");
-        }else{
-            List<String> res = new ArrayList<>();
-            int pos = 1;
-            Iterator it = llistaComandes.llista.iterator();
-            while(it.hasNext()){
-                res.add("\n[" + String.valueOf(pos) + "]" + it.next().toString());
-                pos++;
-            }
-            return res;
+    public List<String> recuperaComandes(){
+        List<String> res = new ArrayList<>();
+        int pos = 1;
+        Iterator it = llistaComandes.llista.iterator();
+        while(it.hasNext()){
+            res.add("\n[" + String.valueOf(pos) + "]" + it.next().toString());
+            pos++;
         }
+        return res;
     }
 
     /**
      * Mètode per recuperar les comandes urgents
      * @return List<String>
-     * @throws prog2.vista.MercatException Si la llista està buida
      */
     @Override
-    public List<String> recuperaComandesUrgents() throws MercatException{
-        if(llistaComandes.isEmpty()){
-            throw new MercatException("La llista de comandes és buida.\n");
-        }else{
-            List<String> res = new ArrayList<>();
-            Iterator it = llistaComandes.llista.iterator();
-            int pos = 1;
-            while(it.hasNext()){
-                Comanda cmd = (Comanda) it.next();
-                if(cmd instanceof ComandaUrgent){
-                    ComandaUrgent comandaUrgent = (ComandaUrgent) cmd;
-                    res.add("\n[" + String.valueOf(pos) + "]" + comandaUrgent.toString());
-                    pos++;
-                }
-            }
-            if (res.isEmpty()){
-                throw new MercatException("No hi ha cap comanda urgent registrada.\n");
-            }else{
-                return res;
+    public List<String> recuperaComandesUrgents(){
+        List<String> res = new ArrayList<>();
+        Iterator it = llistaComandes.llista.iterator();
+        int pos = 1;
+        while(it.hasNext()){
+            Comanda cmd = (Comanda) it.next();
+            if(cmd instanceof ComandaUrgent){
+                ComandaUrgent comandaUrgent = (ComandaUrgent) cmd;
+                res.add("\n[" + String.valueOf(pos) + "]" + comandaUrgent.toString());
+                pos++;
             }
         }
+        return res;
     }
 
     /**

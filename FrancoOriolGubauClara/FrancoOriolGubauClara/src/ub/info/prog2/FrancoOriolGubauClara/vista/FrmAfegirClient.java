@@ -7,6 +7,8 @@ package ub.info.prog2.FrancoOriolGubauClara.vista;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import ub.info.prog2.FrancoOriolGubauClara.controlador.Controlador;
 
 /**
@@ -18,9 +20,11 @@ public class FrmAfegirClient extends javax.swing.JDialog {
     /**
      * Creates new form FrmAfegirClient
      */
-    public FrmAfegirClient(java.awt.Frame parent, boolean modal) {
+    public FrmAfegirClient(java.awt.Frame parent, boolean modal, Controlador controlador) {
         super(parent, modal);
+        this.controlador = controlador;
         initComponents();
+        btnAcceptar.setEnabled(false);
     }
 
     /**
@@ -33,38 +37,69 @@ public class FrmAfegirClient extends javax.swing.JDialog {
     private void initComponents() {
 
         panAfegirClient = new javax.swing.JPanel();
-        lblNomClient = new javax.swing.JLabel();
-        lblCorreuElectronic = new javax.swing.JLabel();
-        lblClientPremium = new javax.swing.JLabel();
-        lblNomCognomsClient = new javax.swing.JLabel();
-        lblAdrecaPostal = new javax.swing.JLabel();
+        etNomClient = new javax.swing.JLabel();
+        etCorreuElectronic = new javax.swing.JLabel();
+        etClientPremium = new javax.swing.JLabel();
+        etCognomsClient = new javax.swing.JLabel();
+        etAdrecaPostal = new javax.swing.JLabel();
         cbxTipusClient = new javax.swing.JComboBox<>();
         txtAdrecaPostal = new javax.swing.JTextField();
         txtCodiPostal = new javax.swing.JTextField();
         txtNomClient = new javax.swing.JTextField();
-        txtCognomsClient = new javax.swing.JTextField();
-        lblCodiPostal = new javax.swing.JLabel();
+        etCodiPostal = new javax.swing.JLabel();
         txtCorreuElectronic = new javax.swing.JTextField();
-        btnAfegir = new javax.swing.JButton();
+        txtCognomsClient = new javax.swing.JTextField();
+        btnAcceptar = new javax.swing.JButton();
         btnCancellar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         panAfegirClient.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Afegir Client", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
 
-        lblNomClient.setText("Nom:");
+        etNomClient.setText("Nom:");
 
-        lblCorreuElectronic.setText("Correu electrònic:");
+        etCorreuElectronic.setText("Correu electrònic:");
 
-        lblClientPremium.setText("Tipus Client:");
+        etClientPremium.setText("Tipus Client:");
 
-        lblNomCognomsClient.setText("Cognoms:");
+        etCognomsClient.setText("Cognoms:");
 
-        lblAdrecaPostal.setText("Adreça:");
+        etAdrecaPostal.setText("Adreça:");
 
-        cbxTipusClient.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estàndard", "Premium" }));
+        cbxTipusClient.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estàndard", "Prèmium" }));
+        cbxTipusClient.setToolTipText("");
 
-        lblCodiPostal.setText("Codi Postal:");
+        txtAdrecaPostal.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtAdrecaPostalKeyReleased(evt);
+            }
+        });
+
+        txtCodiPostal.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtCodiPostalKeyReleased(evt);
+            }
+        });
+
+        txtNomClient.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtNomClientKeyReleased(evt);
+            }
+        });
+
+        etCodiPostal.setText("Codi Postal:");
+
+        txtCorreuElectronic.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtCorreuElectronicKeyReleased(evt);
+            }
+        });
+
+        txtCognomsClient.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtCognomsClientKeyReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout panAfegirClientLayout = new javax.swing.GroupLayout(panAfegirClient);
         panAfegirClient.setLayout(panAfegirClientLayout);
@@ -74,24 +109,26 @@ public class FrmAfegirClient extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(panAfegirClientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panAfegirClientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(lblClientPremium, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblCorreuElectronic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblAdrecaPostal, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(lblNomClient))
+                        .addComponent(etClientPremium, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(etCorreuElectronic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(etAdrecaPostal, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(etNomClient))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panAfegirClientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(panAfegirClientLayout.createSequentialGroup()
                         .addComponent(txtNomClient, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblNomCognomsClient)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtCognomsClient, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(etCognomsClient)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtCognomsClient))
                     .addGroup(panAfegirClientLayout.createSequentialGroup()
                         .addGroup(panAfegirClientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtAdrecaPostal)
-                            .addComponent(cbxTipusClient, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(lblCodiPostal, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(panAfegirClientLayout.createSequentialGroup()
+                                .addComponent(cbxTipusClient, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 328, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(etCodiPostal, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtCodiPostal, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(txtCorreuElectronic))
@@ -101,33 +138,33 @@ public class FrmAfegirClient extends javax.swing.JDialog {
             panAfegirClientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panAfegirClientLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panAfegirClientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtNomClient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(panAfegirClientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lblNomClient, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
-                        .addComponent(txtCognomsClient, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblNomCognomsClient, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(panAfegirClientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panAfegirClientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
+                        .addComponent(etNomClient, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
+                        .addComponent(etCognomsClient, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtCognomsClient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNomClient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(11, 11, 11)
                 .addGroup(panAfegirClientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtCodiPostal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblAdrecaPostal, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(etAdrecaPostal, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtAdrecaPostal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblCodiPostal, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(etCodiPostal, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panAfegirClientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtCorreuElectronic, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblCorreuElectronic, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(etCorreuElectronic, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addGroup(panAfegirClientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblClientPremium, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(etClientPremium, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbxTipusClient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
-        btnAfegir.setText("Afegir");
-        btnAfegir.addActionListener(new java.awt.event.ActionListener() {
+        btnAcceptar.setText("Acceptar");
+        btnAcceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAfegirActionPerformed(evt);
+                btnAcceptarActionPerformed(evt);
             }
         });
 
@@ -142,15 +179,15 @@ public class FrmAfegirClient extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(panAfegirClient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnAfegir, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnCancellar, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(panAfegirClient, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 527, Short.MAX_VALUE)
+                        .addComponent(btnAcceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnCancellar, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
@@ -161,81 +198,70 @@ public class FrmAfegirClient extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancellar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnAfegir))
+                    .addComponent(btnAcceptar))
                 .addGap(20, 20, 20))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAfegirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAfegirActionPerformed
+    private void btnAcceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcceptarActionPerformed
         try{
             String nomClient = txtNomClient.getText() + " " + txtCognomsClient.getText();
             String correuElectrClient = txtCorreuElectronic.getText();
             String correuPostalClient = txtAdrecaPostal.getText() + ", " + txtCodiPostal.getText();
             boolean esPremium = ("Prèmium").equals(cbxTipusClient.getSelectedItem());
+            System.out.println(cbxTipusClient.getSelectedItem());
             controlador.afegirClient(nomClient, correuElectrClient, correuPostalClient, esPremium);
+            this.dispose();
         }catch (MercatException e) {
-            
+            JOptionPane.showMessageDialog(this, e.getMessage(),"", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_btnAfegirActionPerformed
+    }//GEN-LAST:event_btnAcceptarActionPerformed
 
     private void btnCancellarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancellarActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_btnCancellarActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmAfegirClient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmAfegirClient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmAfegirClient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmAfegirClient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void txtNomClientKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNomClientKeyReleased
+        btnAcceptar.setEnabled(comprovarTotsCampsPlens());
+    }//GEN-LAST:event_txtNomClientKeyReleased
 
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                FrmAfegirClient dialog = new FrmAfegirClient(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
+    private void txtCognomsClientKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCognomsClientKeyReleased
+        btnAcceptar.setEnabled(comprovarTotsCampsPlens());
+    }//GEN-LAST:event_txtCognomsClientKeyReleased
+
+    private void txtAdrecaPostalKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAdrecaPostalKeyReleased
+        btnAcceptar.setEnabled(comprovarTotsCampsPlens());
+    }//GEN-LAST:event_txtAdrecaPostalKeyReleased
+
+    private void txtCodiPostalKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodiPostalKeyReleased
+        btnAcceptar.setEnabled(comprovarTotsCampsPlens());
+    }//GEN-LAST:event_txtCodiPostalKeyReleased
+
+    private void txtCorreuElectronicKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCorreuElectronicKeyReleased
+        btnAcceptar.setEnabled(comprovarTotsCampsPlens());
+    }//GEN-LAST:event_txtCorreuElectronicKeyReleased
+
+   private boolean comprovarCampsPlens(JTextField caixaDeText){
+        return !caixaDeText.getText().equals("");
+    }
+    private boolean comprovarTotsCampsPlens(){
+        return comprovarCampsPlens(txtNomClient) && comprovarCampsPlens(txtCognomsClient)
+                    && comprovarCampsPlens(txtCorreuElectronic) && comprovarCampsPlens(txtAdrecaPostal)
+                    && comprovarCampsPlens(txtCodiPostal);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAfegir;
+    private javax.swing.JButton btnAcceptar;
     private javax.swing.JButton btnCancellar;
     private javax.swing.JComboBox<String> cbxTipusClient;
-    private javax.swing.JLabel lblAdrecaPostal;
-    private javax.swing.JLabel lblClientPremium;
-    private javax.swing.JLabel lblCodiPostal;
-    private javax.swing.JLabel lblCorreuElectronic;
-    private javax.swing.JLabel lblNomClient;
-    private javax.swing.JLabel lblNomCognomsClient;
+    private javax.swing.JLabel etAdrecaPostal;
+    private javax.swing.JLabel etClientPremium;
+    private javax.swing.JLabel etCodiPostal;
+    private javax.swing.JLabel etCognomsClient;
+    private javax.swing.JLabel etCorreuElectronic;
+    private javax.swing.JLabel etNomClient;
     private javax.swing.JPanel panAfegirClient;
     private javax.swing.JTextField txtAdrecaPostal;
     private javax.swing.JTextField txtCodiPostal;

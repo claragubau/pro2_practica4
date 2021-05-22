@@ -28,7 +28,7 @@
               <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="0" pref="154" max="32767" attributes="0"/>
-                      <Component id="btnAfegir" min="-2" pref="104" max="-2" attributes="0"/>
+                      <Component id="btnAcceptar" min="-2" pref="104" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnCancellar" min="-2" pref="104" max="-2" attributes="0"/>
                   </Group>
@@ -46,7 +46,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnCancellar" alignment="3" max="32767" attributes="0"/>
-                  <Component id="btnAfegir" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnAcceptar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
           </Group>
@@ -75,24 +75,24 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="lblEnviamentUrgent" min="-2" max="-2" attributes="0"/>
+                          <Component id="etEnviamentUrgent" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="chkEnviamentUrgent" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="lblTempsEnviament" max="32767" attributes="0"/>
-                              <Component id="lblIdArticle" alignment="1" max="32767" attributes="0"/>
-                              <Component id="lblNomArticle" alignment="1" max="32767" attributes="0"/>
-                              <Component id="lblPreuArticle" alignment="1" max="32767" attributes="0"/>
+                              <Component id="etTempsEnviament" max="32767" attributes="0"/>
+                              <Component id="etIdArticle" alignment="1" max="32767" attributes="0"/>
+                              <Component id="etNomArticle" alignment="1" max="32767" attributes="0"/>
+                              <Component id="etPreu" alignment="1" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="spnTempsEnviament" min="-2" pref="54" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="lblMinuts" min="-2" max="-2" attributes="0"/>
+                                  <Component id="etMinuts" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="txtNomArticle" alignment="0" max="32767" attributes="0"/>
                               <Component id="txtPreu" alignment="0" max="32767" attributes="0"/>
@@ -109,28 +109,28 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblNomArticle" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                      <Component id="etNomArticle" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                       <Component id="txtNomArticle" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblIdArticle" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                      <Component id="etIdArticle" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                       <Component id="txtIdArticle" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblPreuArticle" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                      <Component id="etPreu" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                       <Component id="txtPreu" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblTempsEnviament" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                      <Component id="etTempsEnviament" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                       <Component id="spnTempsEnviament" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblMinuts" alignment="3" max="32767" attributes="0"/>
+                      <Component id="etMinuts" alignment="3" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace pref="9" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblEnviamentUrgent" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                      <Component id="etEnviamentUrgent" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                       <Component id="chkEnviamentUrgent" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -139,32 +139,32 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="lblNomArticle">
+        <Component class="javax.swing.JLabel" name="etNomArticle">
           <Properties>
             <Property name="text" type="java.lang.String" value="Nom de l&apos;Article:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblIdArticle">
+        <Component class="javax.swing.JLabel" name="etIdArticle">
           <Properties>
             <Property name="text" type="java.lang.String" value="Id de l&apos;Article:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblPreuArticle">
+        <Component class="javax.swing.JLabel" name="etPreu">
           <Properties>
             <Property name="text" type="java.lang.String" value="Preu:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblTempsEnviament">
+        <Component class="javax.swing.JLabel" name="etTempsEnviament">
           <Properties>
             <Property name="text" type="java.lang.String" value="Temps Enviament:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblEnviamentUrgent">
+        <Component class="javax.swing.JLabel" name="etEnviamentUrgent">
           <Properties>
             <Property name="text" type="java.lang.String" value="Admet Enviaments Urgents: "/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblMinuts">
+        <Component class="javax.swing.JLabel" name="etMinuts">
           <Properties>
             <Property name="text" type="java.lang.String" value="(min)"/>
           </Properties>
@@ -172,10 +172,19 @@
         <Component class="javax.swing.JSpinner" name="spnTempsEnviament">
         </Component>
         <Component class="javax.swing.JTextField" name="txtNomArticle">
+          <Events>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtNomArticleKeyReleased"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtPreu">
+          <Events>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtPreuKeyReleased"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtIdArticle">
+          <Events>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtIdArticleKeyReleased"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="chkEnviamentUrgent">
         </Component>
@@ -189,12 +198,12 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancellarActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnAfegir">
+    <Component class="javax.swing.JButton" name="btnAcceptar">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Afegir"/>
+        <Property name="text" type="java.lang.String" value="Acceptar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAfegirActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAcceptarActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
