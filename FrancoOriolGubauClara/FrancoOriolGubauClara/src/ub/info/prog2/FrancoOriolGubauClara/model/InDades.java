@@ -22,7 +22,7 @@ public interface InDades {
     
     public void esborrarComanda(int position) throws MercatException;
     
-    public List<String> recuperaComandes()throws MercatException; 
+    public List<String> recuperaComandes(); 
     
-    public List<String> recuperaComandesUrgents() throws MercatException;
+    public List<String> recuperaComandesUrgents();
 }

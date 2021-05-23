@@ -91,8 +91,8 @@ public class FrmGestioComandes extends javax.swing.JFrame {
         chkComandesUrgents = new javax.swing.JCheckBox();
         btnAfegirComanda = new javax.swing.JButton();
         btnEliminarComanda = new javax.swing.JButton();
-        btnSortir = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        btnSortir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -249,6 +249,9 @@ public class FrmGestioComandes extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setText("Gestió Comandes");
+
         btnSortir.setText("Sortir");
         btnSortir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -256,23 +259,19 @@ public class FrmGestioComandes extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("Gestió Comandes");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(panAfegirComanda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnSortir, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(panVisualitzarComandes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(panAfegirComanda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnSortir, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(panVisualitzarComandes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -318,10 +317,6 @@ public class FrmGestioComandes extends javax.swing.JFrame {
         btnEliminarComanda.setEnabled(!lstLlistaComandes.isSelectionEmpty());
     }//GEN-LAST:event_lstLlistaComandesValueChanged
 
-    private void btnSortirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSortirActionPerformed
-        this.dispose();
-    }//GEN-LAST:event_btnSortirActionPerformed
-
     private void chkComandesUrgentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkComandesUrgentsActionPerformed
         visualitzarComandesNormalsOUrgents();
     }//GEN-LAST:event_chkComandesUrgentsActionPerformed
@@ -355,6 +350,10 @@ public class FrmGestioComandes extends javax.swing.JFrame {
     private void cbxLlistaArticlesItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxLlistaArticlesItemStateChanged
         btnConfirmar.setEnabled(comprovarCampsPlens());
     }//GEN-LAST:event_cbxLlistaArticlesItemStateChanged
+
+    private void btnSortirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSortirActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnSortirActionPerformed
 
     private boolean comprovarCampsPlens(){
         return !lstLlistaClients.isSelectionEmpty() && (cbxLlistaArticles.getSelectedIndex() != -1); 

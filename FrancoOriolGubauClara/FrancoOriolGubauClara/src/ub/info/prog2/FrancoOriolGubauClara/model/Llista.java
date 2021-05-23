@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Iterator;
+
 import ub.info.prog2.FrancoOriolGubauClara.vista.MercatException;
 
 /**
@@ -46,7 +47,7 @@ public class Llista<T> implements Serializable {
     /**
      * Mètode per esborrar un element de la llista
      * @param t T
-     * @throws prog2.vista.MercatException Si la llista és buida
+     * @throws ub.info.prog2.FrancoOriolGubauClara.vista.MercatException
      */
     public void esborrar(T t) throws MercatException{
         if(this.isEmpty()){
@@ -60,7 +61,7 @@ public class Llista<T> implements Serializable {
      * Mètode per obtenir un element segons la posició
      * @param position int
      * @return element
-     * @throws prog2.vista.MercatException Si la posició no correspon a cap element de la llista o és buida
+     * @throws ub.info.prog2.FrancoOriolGubauClara.vista.MercatException
      */
     public T getAt(int position) throws MercatException{
         if(this.isEmpty()){
@@ -74,7 +75,7 @@ public class Llista<T> implements Serializable {
 
     /**
      * Mètode per buidar la llista
-     * @throws prog2.vista.MercatException Si la llista és buida
+     * @throws ub.info.prog2.FrancoOriolGubauClara.vista.MercatException
      */
     public void clear() throws MercatException{
         if (this.isEmpty()){

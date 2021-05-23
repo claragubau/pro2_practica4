@@ -11,7 +11,7 @@ import javax.swing.JTextField;
 import ub.info.prog2.FrancoOriolGubauClara.controlador.Controlador;
 /**
  *
- * @author clara
+ * @author Oriol Franco i Clara Gubau
  */
 public class FrmAfegirArticle extends javax.swing.JDialog {
     Controlador controlador;
