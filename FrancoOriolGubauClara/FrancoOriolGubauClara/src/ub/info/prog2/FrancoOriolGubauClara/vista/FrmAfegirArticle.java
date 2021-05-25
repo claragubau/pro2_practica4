@@ -230,7 +230,7 @@ public class FrmAfegirArticle extends javax.swing.JDialog {
         return !caixaDeText.getText().equals("");
     }
     private boolean comprovarNumArticlePositiu(JSpinner spn){
-        return !spn.getValue().equals(0);
+        return (Integer) spn.getValue() > 0;
     }
     private boolean comprovarTotsCampsPlens(){
         return comprovarTextIntroduit(txtNomArticle) && comprovarTextIntroduit(txtIdArticle) 
