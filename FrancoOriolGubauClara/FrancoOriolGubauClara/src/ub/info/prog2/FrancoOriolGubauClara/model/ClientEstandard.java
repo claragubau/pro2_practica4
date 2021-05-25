@@ -6,7 +6,9 @@ import java.io.Serializable;
  * Classe Client Estandard
  */
 public class ClientEstandard extends Client implements Serializable {
-
+    float mensualitat = 0F;
+    float descEnviament = 0F;
+    
     /**
      * Constructor Client Premium
      * @param correuElectronic String correu electrònic
@@ -32,7 +34,7 @@ public class ClientEstandard extends Client implements Serializable {
      */
     @Override
     public float calcMensual() {
-        return 0;
+        return mensualitat;
     }
 
     /**
@@ -41,6 +43,6 @@ public class ClientEstandard extends Client implements Serializable {
      */
     @Override
     public float descompteEnv() {
-        return 0;
+        return descEnviament;
     }
 }

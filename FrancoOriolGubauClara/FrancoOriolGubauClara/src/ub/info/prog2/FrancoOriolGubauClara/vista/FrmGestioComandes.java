@@ -208,7 +208,8 @@ public final class FrmGestioComandes extends javax.swing.JFrame {
         );
 
         panVisualitzarComandes.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Visualitzar Comandes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
-        panVisualitzarComandes.setPreferredSize(new java.awt.Dimension(815, 308));
+        panVisualitzarComandes.setMaximumSize(new java.awt.Dimension(700, 400));
+        panVisualitzarComandes.setPreferredSize(new java.awt.Dimension(650, 300));
 
         lstLlistaComandes.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         lstLlistaComandes.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -313,7 +314,7 @@ public final class FrmGestioComandes extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(panAfegirComanda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(panVisualitzarComandes, javax.swing.GroupLayout.PREFERRED_SIZE, 659, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(panVisualitzarComandes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -416,7 +417,9 @@ public final class FrmGestioComandes extends javax.swing.JFrame {
     }//GEN-LAST:event_lstLlistaComandesMouseMoved
 
     private boolean comprovarCampsPlens(){
-        return (cbxLlistaClients.getSelectedIndex() != -1) && (cbxLlistaArticles.getSelectedIndex() != -1); 
+        return (cbxLlistaClients.getSelectedIndex() != -1) && 
+                (cbxLlistaArticles.getSelectedIndex() != -1) && 
+                (!spnUnitats.getValue().equals(0)); 
     }
     
     private void visualitzarComandesNormalsOUrgents(){

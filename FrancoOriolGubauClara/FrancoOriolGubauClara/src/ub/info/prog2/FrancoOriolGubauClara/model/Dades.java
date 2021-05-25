@@ -47,7 +47,7 @@ public class Dades implements InDades, Serializable{
         Iterator it = llistaArticles.llista.iterator();
         int pos = 1;
         while(it.hasNext()){
-            res.add("\n[" + String.valueOf(pos) + "]" + it.next().toString());
+            res.add("\n[" + String.valueOf(pos) + "] " + it.next().toString());
             pos++;
         }
         return res;

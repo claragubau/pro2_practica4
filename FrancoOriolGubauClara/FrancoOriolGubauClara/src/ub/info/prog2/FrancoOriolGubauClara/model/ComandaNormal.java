@@ -6,6 +6,11 @@ import java.util.Date;
  * Classe Comanda normal
  */
 public class ComandaNormal extends Comanda{
+    float descEnviament = 1 - client.descompteEnv()/100;
+    int dosDies = 2*24*3600*1000;
+    float tempsEnviament = article.getTempsEnviament()*60*1000;
+    Date dataActual = new Date();
+    float tempsRestant = dataActual.getTime() - dataComanda.getTime();
 
     /**
      * Constuctor Comanda Normal
@@ -34,8 +39,7 @@ public class ComandaNormal extends Comanda{
      */
     @Override
     public boolean comandaEnviada() {
-        Date dataActual = new Date();
-            return dataActual.getTime() - dataComanda.getTime() >= article.getTempsEnviament()*60*1000;
+            return tempsRestant >= tempsEnviament;
         }
 
     /**
@@ -45,8 +49,7 @@ public class ComandaNormal extends Comanda{
     @Override
     public boolean comandaRebuda() {
         if(this.comandaEnviada()){
-            Date dataActual = new Date();
-            return dataActual.getTime() - dataComanda.getTime() >= article.getTempsEnviament()*60*1000 + 2*24*3600*1000;
+            return tempsRestant >= tempsEnviament + dosDies;
         }else{
             return false;
         }
@@ -58,7 +61,7 @@ public class ComandaNormal extends Comanda{
      */
     @Override
     public float preuEnviament() {
-        return 1 * (1 - client.descompteEnv()/100);
+        return descEnviament;
     }
 
 
