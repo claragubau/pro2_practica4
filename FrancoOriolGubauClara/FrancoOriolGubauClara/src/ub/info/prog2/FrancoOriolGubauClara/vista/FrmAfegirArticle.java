@@ -7,6 +7,7 @@ package ub.info.prog2.FrancoOriolGubauClara.vista;
 
 
 import javax.swing.JOptionPane;
+import javax.swing.JSpinner;
 import javax.swing.JTextField;
 import ub.info.prog2.FrancoOriolGubauClara.controlador.Controlador;
 /**
@@ -65,6 +66,12 @@ public class FrmAfegirArticle extends javax.swing.JDialog {
         etEnviamentUrgent.setText("Admet Enviaments Urgents: ");
 
         etMinuts.setText("(min)");
+
+        spnTempsEnviament.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                spnTempsEnviamentStateChanged(evt);
+            }
+        });
 
         txtNomArticle.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -215,11 +222,19 @@ public class FrmAfegirArticle extends javax.swing.JDialog {
         btnAcceptar.setEnabled(comprovarTotsCampsPlens());
     }//GEN-LAST:event_txtPreuKeyReleased
 
-    private boolean comprovarCampsPlens(JTextField caixaDeText){
+    private void spnTempsEnviamentStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spnTempsEnviamentStateChanged
+        btnAcceptar.setEnabled(comprovarTotsCampsPlens());
+    }//GEN-LAST:event_spnTempsEnviamentStateChanged
+
+    private boolean comprovarTextIntroduit(JTextField caixaDeText){
         return !caixaDeText.getText().equals("");
     }
+    private boolean comprovarNumArticlePositiu(JSpinner spn){
+        return !spn.getValue().equals(0);
+    }
     private boolean comprovarTotsCampsPlens(){
-        return comprovarCampsPlens(txtNomArticle) && comprovarCampsPlens(txtIdArticle) && comprovarCampsPlens(txtPreu);
+        return comprovarTextIntroduit(txtNomArticle) && comprovarTextIntroduit(txtIdArticle) 
+                && comprovarTextIntroduit(txtPreu) && comprovarNumArticlePositiu(spnTempsEnviament);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

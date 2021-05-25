@@ -43,7 +43,7 @@ public class AppMercatUB extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        pnlMercatUB.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 255)), "Mercat UB", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12), new java.awt.Color(0, 0, 255))); // NOI18N
+        pnlMercatUB.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 255)), "Mercat UB", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12), new java.awt.Color(0, 0, 0))); // NOI18N
 
         btnGestioArticles.setBackground(new java.awt.Color(204, 255, 204));
         btnGestioArticles.setText("Gestionar Articles");
@@ -71,17 +71,13 @@ public class AppMercatUB extends javax.swing.JFrame {
         });
 
         etBenvingudaMercatUB.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        etBenvingudaMercatUB.setForeground(new java.awt.Color(51, 51, 255));
+        etBenvingudaMercatUB.setForeground(new java.awt.Color(0, 0, 0));
         etBenvingudaMercatUB.setText("Benvinguts a Mercat UB. Seleccioneu una opció:");
 
         javax.swing.GroupLayout pnlMercatUBLayout = new javax.swing.GroupLayout(pnlMercatUB);
         pnlMercatUB.setLayout(pnlMercatUBLayout);
         pnlMercatUBLayout.setHorizontalGroup(
             pnlMercatUBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlMercatUBLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(etBenvingudaMercatUB, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlMercatUBLayout.createSequentialGroup()
                 .addContainerGap(214, Short.MAX_VALUE)
                 .addGroup(pnlMercatUBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -89,6 +85,10 @@ public class AppMercatUB extends javax.swing.JFrame {
                     .addComponent(btnGestioArticles, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnGestioComandes, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(205, 205, 205))
+            .addGroup(pnlMercatUBLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(etBenvingudaMercatUB, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlMercatUBLayout.setVerticalGroup(
             pnlMercatUBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

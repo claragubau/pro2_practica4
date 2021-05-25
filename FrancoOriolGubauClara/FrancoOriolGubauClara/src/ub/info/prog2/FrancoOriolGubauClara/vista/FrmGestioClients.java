@@ -29,7 +29,12 @@ public class FrmGestioClients extends javax.swing.JFrame {
         for(String str : controlador.visualitzarClients()){
             model.addElement(str);
         }
-        lstLlistaClients.setModel(model); 
+        if(model.size() <= 0){
+            lstLlistaClients.setVisible(false);
+        }else{
+            lstLlistaClients.setVisible(true);
+            lstLlistaClients.setModel(model); 
+        }
     }
 
     /**
@@ -49,6 +54,7 @@ public class FrmGestioClients extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        lstLlistaClients.setToolTipText("");
         jScrollPane2.setViewportView(lstLlistaClients);
 
         btnAfegirClient.setText("Afegir Client");
@@ -91,12 +97,12 @@ public class FrmGestioClients extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
+                .addGap(28, 28, 28)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(btnAfegirClient)
-                .addGap(9, 9, 9)
-                .addComponent(btnSortir, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addComponent(btnSortir)
                 .addContainerGap())
         );
 

@@ -170,6 +170,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JSpinner" name="spnTempsEnviament">
+          <Events>
+            <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="spnTempsEnviamentStateChanged"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtNomArticle">
           <Events>
