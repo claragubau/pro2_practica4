@@ -13,14 +13,14 @@ import java.util.List;
  * Classe Controlador
  */
 public class Controlador {
-    Dades dades = new Dades();
+    Dades dades;
     
     /**
      * Constructor classe Controlador
      * @param dades dades
      */
-    public Controlador(Dades dades){
-        this.dades = dades;
+    public Controlador(){
+        this.dades = new Dades();
     }
 
     /**

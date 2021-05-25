@@ -27,7 +27,8 @@ public final class FrmGestioComandes extends javax.swing.JFrame {
         chkAfegirComandaUrgent.setSelected(false);
         btnEliminarComanda.setEnabled(false);
         omplirLlistaComandes();
-        if(controlador.visualitzarArticles().size() <= 0){
+        if(controlador.visualitzarArticles().size() <= 0
+                || controlador.visualitzarClients().size() <= 0){
             btnAfegirComanda.setEnabled(false);
             btnActualitzarLlista.setEnabled(false);
         }else{
@@ -368,11 +369,9 @@ public final class FrmGestioComandes extends javax.swing.JFrame {
     }//GEN-LAST:event_cbxLlistaArticlesItemStateChanged
 
     private void cbxLlistaArticlesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxLlistaArticlesActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_cbxLlistaArticlesActionPerformed
 
     private void cbxLlistaClientsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxLlistaClientsActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_cbxLlistaClientsActionPerformed
 
     private void cbxLlistaClientsItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxLlistaClientsItemStateChanged
