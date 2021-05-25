@@ -30,8 +30,6 @@ public final class FrmGestioComandes extends javax.swing.JFrame {
         omplirLlistaArticles();
         omplirLlistaClients();
         btnAfegirComanda.setEnabled(articlesIClientsDisponibles());
-        chkComandesUrgents.setEnabled(lstLlistaComandes.getComponentCount() != 0);
-        System.out.println(lstLlistaComandes.getComponentCount());
     }
     
     public void omplirLlistaArticles(){
@@ -366,6 +364,8 @@ public final class FrmGestioComandes extends javax.swing.JFrame {
         cbxLlistaArticles.setSelectedIndex(-1);
         cbxLlistaClients.setSelectedIndex(-1);
         chkComandesUrgents.setEnabled(true);
+        omplirLlistaArticles();
+        omplirLlistaClients();
     }//GEN-LAST:event_btnAfegirComandaActionPerformed
 
     private void chkComandesUrgentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkComandesUrgentsActionPerformed
