@@ -14,6 +14,14 @@ import java.util.List;
  */
 public class Controlador {
     Dades dades = new Dades();
+    
+    /**
+     * Constructor classe Controlador
+     * @param dades dades
+     */
+    public Controlador(Dades dades){
+        this.dades = dades;
+    }
 
     /**
      * Mètode per afegir un article
